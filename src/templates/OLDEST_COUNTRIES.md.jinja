@@ -1,0 +1,13 @@
+# Top 10 countries with the oldest Covid-19 data
+
+*Report generated at: {{ time }}*
+
+---
+{% if report |length > 0 %}
+| Country | Last updated date |
+|:--------|:-----------------:|
+{% for country, date in report.items() %}|{{ country }}|{{ date }}|
+{% endfor %}
+{% else %}
+    No Data Found!
+{% endif -%}

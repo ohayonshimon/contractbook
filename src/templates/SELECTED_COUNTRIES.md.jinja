@@ -1,0 +1,17 @@
+# Covid-19 Selected Countries Report
+
+*Report generated at: {{ time }}*
+
+---
+
+{% if report |length > 0 %}
+  {% for country in report %}
+### {{ report[country]['name'] }} stats
+
+| new cases | total cases | new vaccinations | total vaccinations |
+|:----------|:------------|:-----------------|:-------------------|
+|{{ report[country]['new_cases'] }}|{{ report[country]['total_cases'] }}|{{ report[country]['new_vaccinations'] }}|{{ report[country]['total_vaccinations'] }}|
+  {% endfor %}
+{% else %}
+    No Data Found!
+{% endif -%}

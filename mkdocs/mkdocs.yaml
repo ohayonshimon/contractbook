@@ -1,0 +1,16 @@
+site_name: Shimon Solution
+site_description: 'A OWID reports site'
+site_author: 'Shimon Ohayon'
+docs_dir: ../reports
+repo_name: 'ohayonshimon/contractbook'
+repo_url: 'https://ohayonshimon.github.io/contractbook/'
+nav:
+    - Home: 'index.md'
+    - 'Reports':
+        - Selected: 'SELECTED_COUNTRIES.md'
+        - Oldest: 'OLDEST_COUNTRIES.md'
+theme:
+  name: null
+  custom_dir: cinder
+  colorscheme: github
+  highlightjs: true

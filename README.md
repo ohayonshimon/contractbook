@@ -1,5 +1,6 @@
 # Shimon's solution for Contractbook
 
+Reports at: https://ohayonshimon.github.io/contractbook
 ## Some clarifications
 
 1. I opened this GitHub account especially for this task, Don’t be alarmed by seeing an empty account.
@@ -112,4 +113,4 @@ That being said. Everything is open for discussion and we as PRE should be ready
 **Keep** it simple - No logic in Yaml,  Don’t create a mess of scripts and “if”’s.
 Adopt an already working solution and don’t reinvent the wheel.
 
-## Task 2 - See code
+## Task 2 - See Code

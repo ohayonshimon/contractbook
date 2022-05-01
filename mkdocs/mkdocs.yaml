@@ -3,7 +3,7 @@ site_description: 'A OWID reports site'
 site_author: 'Shimon Ohayon'
 docs_dir: ../reports
 repo_name: 'ohayonshimon/contractbook'
-repo_url: 'https://ohayonshimon.github.io/contractbook/'
+repo_url: 'https://github.com/ohayonshimon/contractbook'
 nav:
     - Home: 'index.md'
     - 'Reports':

@@ -4,6 +4,7 @@ site_author: 'Shimon Ohayon'
 docs_dir: ../reports
 repo_name: 'ohayonshimon/contractbook'
 repo_url: 'https://github.com/ohayonshimon/contractbook'
+edit_uri: ''
 nav:
     - Home: 'index.md'
     - 'Reports':

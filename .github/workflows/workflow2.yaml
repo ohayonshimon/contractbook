@@ -23,7 +23,7 @@ jobs:
           python-version: '3.8'
 
       - name: Update countries list
-        run: echo ${{ env.COUNTRIES }} > countries
+        run: echo ${{ env.COUNTRIES }} > countries.txt
 
       - name: Execute OWIDreports.sh
         run: ./bin/OWIDreports.sh

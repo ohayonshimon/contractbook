@@ -38,19 +38,19 @@ Here is an Exmaple of a complete CI/CD workflow (Using GitOps):
 ```mermaid
 graph TD
    A[Feature branch] -->|PR Created to release Branch| B(Lint & Unit tests Checks)
-   B --> C{All the Checks passed?}
-   C --> |Yes|D(Run Integration Test)
-   C --> |No|E(Go fix)
- 
-   D --> F{All the Tests passed?}
-   F --> |Yes| H(Deploy To Staging)
-   F --> |No| G(Notify Developer)
-   H --> I(Smoke tests)
-   I --> J{All the Tests passed?}
-   J --> |Yes|K(Deploy To Production)
-   J --> |Yes|M(Merge PR and create a Release)
-   J --> |No|L(Notify Developer)
-   K --> N(Notify Product)
+   B --> |Succses|C(Run Integration Test)
+   B --> |Failure|D(Notify Developer)
+   C --> E(Deploy To Staging)
+   E --> F(Regression tests)
+   E --> G(Smoke tests)
+
+   F --> |Succses|H{Deploy To Production}
+   G --> |Succses|H{Deploy To Production}
+   F --> |Failure|I{Notify Developer}
+   G --> |Failure|I{Notify Developer}
+   H --> J(Merge PR and create a Release)
+   J --> K(Notify Stakeholders)
+
 ```
 
 **Q:** _What would you optimize for and why? How would you go about debugging failed builds?_

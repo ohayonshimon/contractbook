@@ -39,17 +39,14 @@ Here is an Exmaple of a complete CI/CD workflow (Using GitOps):
 graph TD
    A[Feature branch] -->|PR Created to release Branch| B(Lint & Unit tests Checks)
    B --> |Succses|C(Run Integration Test)
-   B --> |Failure|D(Notify Developer)
-   C --> E(Deploy To Staging)
+   B --> |Failure|D{Notify Developer}
+   C --> |Succses|E(Deploy To Staging)
+   C --> |Failure|D{Notify Developer}
    E --> F(Regression tests)
-   E --> G(Smoke tests)
-
-   F --> |Succses|H{Deploy To Production}
-   G --> |Succses|H{Deploy To Production}
-   F --> |Failure|I{Notify Developer}
-   G --> |Failure|I{Notify Developer}
-   H --> J(Merge PR and create a Release)
-   J --> K(Notify Stakeholders)
+   F --> |Succses|G(Deploy To Production)
+   F --> |Failure|D{Notify Developer}
+   G --> H(Merge PR and create a Release)
+   H --> I(Notify Stakeholders)
 
 ```
 
@@ -71,13 +68,14 @@ For debugging i will try to fetch the exception/errors lines of code and send it
 
 **A:** Yes, Some meaningful information can be extracted from these metrics which can help us get a better understanding of the Company's development cycle and workflow stats
 
-- How much time does the PRE tools and services “cost” the company? (From PR merged to Production)
+- How much time does the PRE tools and services “cost” the company? (From PR approved to Production)
 - Does test executions take longer than they did in the past?
 - How much do the developers use the company tools provided for them?
 - Do we have “dead” or “stale” repositories in the Org?
 
-Also, we “show off” our work.
-As infrastructure engineers we don’t get to be in the spotlight a lot (mostly by choice :) ), It would be nice to collect some statistics of what we enabled the company to do in the past year/month/week, For example:
+Also, we can “show off” our work.
+As infrastructure engineers we don’t get to be in the spotlight a lot ,Mostly by choice :), It would be nice to collect some statistics of what we enabled the company to do in the past year/month/week.
+For example:
 
 "This Year the PRE team enable the company to execute more than **12000 builds**, **14000 tests**, **300 production deployments** and **49 product releases**". Nice!
 
